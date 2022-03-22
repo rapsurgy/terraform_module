@@ -1,4 +1,4 @@
-/*terraform{
+terraform{
    required_version = "1.1.0" 
 }
 
@@ -55,7 +55,7 @@ resource "azurerm_virtual_network" "example" {
   tags = {
     environment = "Production"
   }
-}*/
+}
 
 
 /* Below resource is a VPN gateway*/
@@ -65,7 +65,7 @@ resource "azurerm_virtual_network" "example" {
 
 
 
-/*resource "azurerm_subnet" "example" {
+resource "azurerm_subnet" "example" {
   name                 = "GatewaySubnet"
   resource_group_name  = azurerm_resource_group.example.name
   virtual_network_name = azurerm_virtual_network.example.name
@@ -98,7 +98,7 @@ resource "azurerm_virtual_network_gateway" "example" {
     private_ip_address_allocation = "Dynamic"
     subnet_id                     = azurerm_subnet.example.id
   }
-}*/
+}
 
 
 
@@ -107,7 +107,7 @@ resource "azurerm_virtual_network_gateway" "example" {
 /*Below is a VNET/VPN gateway*/
 
 
-/*resource "azurerm_virtual_network" "second" {
+resource "azurerm_virtual_network" "second" {
   name                = "virtualNetwork2"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
@@ -136,7 +136,7 @@ resource "azurerm_virtual_network_gateway" "example" {
     environment = "development"
   }
 }
-*/
+
 
 
 /* Below resource is second VPN gateway*/
@@ -146,7 +146,7 @@ resource "azurerm_virtual_network_gateway" "example" {
 
 
 
-/*resource "azurerm_subnet" "second" {
+resource "azurerm_subnet" "second" {
   name                 = "GatewaySubnet"
   resource_group_name  = azurerm_resource_group.example.name
   virtual_network_name = azurerm_virtual_network.second.name
@@ -179,4 +179,4 @@ resource "azurerm_virtual_network_gateway" "second" {
     private_ip_address_allocation = "Dynamic"
     subnet_id                     = azurerm_subnet.second.id
   }
-}*/
+}
